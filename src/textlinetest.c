@@ -51,7 +51,7 @@ static void on_enter( const char *text, void *data )
           return;
 
      lite_get_textline_text( textline2, &delay );
-     direct_thread_sleep( 1000 * strtoll( delay, NULL, 10 ) );
+     usleep( 1000 * strtol( delay, NULL, 10 ) );
      D_FREE( delay );
 
      argv[i] = NULL;
@@ -94,9 +94,6 @@ int main( int argc, char *argv[] )
 
      /* run the window event loop */
      lite_window_event_loop( window, 0 );
-
-     /* destroy the window */
-     lite_destroy_window( window );
 
      /* deinitialize */
      lite_close();

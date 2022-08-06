@@ -66,7 +66,7 @@ static void button_add_press( LiteTextButton *buttonAdd, void *data )
 
      lite_list_get_item_count( list, &count );
 
-     lite_list_insert_item( list, count, item_data_max++ % D_ARRAY_SIZE(fonts) );
+     lite_list_insert_item( list, count, item_data_max++ % (sizeof(fonts) / sizeof(fonts[0])) );
 
      lite_list_set_selected_item_index( list, count );
 }
@@ -252,9 +252,6 @@ int main( int argc, char *argv[] )
 
      /* run the window event loop */
      lite_window_event_loop( window, 0 );
-
-     /* destroy the window */
-     lite_destroy_window( window );
 
      /* deinitialize */
      lite_close();

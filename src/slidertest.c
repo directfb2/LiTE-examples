@@ -103,9 +103,6 @@ int main( int argc, char *argv[] )
      /* run the window event loop */
      lite_window_event_loop( window, 0 );
 
-     /* destroy the window */
-     lite_destroy_window( window );
-
      /* deinitialize */
      lite_close();
 
