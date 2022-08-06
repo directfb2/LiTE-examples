@@ -1,3 +1,24 @@
+commit 50a64d60bddfb9a0a48d09470cfc3259a6e7cbc6
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Sat Aug 6 12:55:28 2022 +0200
+
+    Call to lite_destroy_window() is not required
+
+commit 52a330fc93c1adeb8e192dc0f55b66a7fcc44f46
+Merge: 07ac53a 9a1c79d
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Mon Aug 1 18:20:39 2022 +0200
+
+    Merge pull request #1 from caramelli/master
+    
+    Restore the LiTE examples
+
+commit 9a1c79dd52e18a44278951ad33cb8998c2caefc1
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Aug 1 18:19:41 2022 +0200
+
+    Add ChangeLog
+
 commit 9f8de4a488be846b61f08b6ab99ac5720f04f9bb
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Mon Aug 1 18:19:23 2022 +0200
