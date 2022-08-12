@@ -56,7 +56,9 @@ static int on_window_resize( LiteWindow *window, int width, int height )
 
 static void button_exit_press( LiteTextButton *buttonExit, void *data )
 {
-     lite_close_window( data );
+     LiteWindow *window = data;
+
+     lite_close_window( window );
 }
 
 static void button_add_press( LiteTextButton *buttonAdd, void *data )

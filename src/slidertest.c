@@ -42,17 +42,18 @@ static int on_window_resize( LiteWindow *window, int width, int height )
 
 static void slider_update( LiteSlider *slider, float pos, void *data )
 {
-     int i = (long) data;
+     int         i      = (long) data;
+     LiteWindow *window = lite_find_my_window( LITE_BOX(slider) );
 
      color[i] = 255 * pos;
 
      if (color[0]) {
           DFBColor bg_color = { color[0], color[1], color[2], color[3] };
 
-          lite_set_window_background( lite_find_my_window( LITE_BOX(slider) ), &bg_color );
+          lite_set_window_background( window, &bg_color );
      }
      else
-          lite_close_window( lite_find_my_window( LITE_BOX(slider) ) );
+          lite_close_window( window );
 }
 
 int main( int argc, char *argv[] )

@@ -27,6 +27,7 @@
 static void on_enter( const char *text, void *data )
 {
      LiteTextLine *textline2 = data;
+     LiteWindow   *window    = lite_find_my_window( LITE_BOX(textline2) );
      int           i         = 0;
      int           len       = strlen( text );
      char         *argv[len+1];
@@ -57,7 +58,7 @@ static void on_enter( const char *text, void *data )
      argv[i] = NULL;
      execvp( argv[0], argv );
 
-     lite_close_window( lite_find_my_window( LITE_BOX(textline2) ) );
+     lite_close_window( window );
 }
 
 int main( int argc, char *argv[] )
