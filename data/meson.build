@@ -20,6 +20,7 @@
 
 examplesdata = [
   'D.dfiff',
+  'tuxsprites.dfiff'
 ]
 
 install_data(examplesdata, install_dir: examplesdatadir)

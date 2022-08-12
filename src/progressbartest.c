@@ -24,25 +24,28 @@
 #include <lite/progressbar.h>
 #include <lite/window.h>
 
+#define TIMEOUT 50
+
 static int timeout_id;
 
-DFBResult timeout( void *data )
+static DFBResult timeout_cb( void *data )
 {
      float            value;
      LiteProgressBar *progressbar = data;
+     LiteWindow      *window      = lite_find_my_window( LITE_BOX(progressbar) );
 
      lite_get_progressbar_value( progressbar, &value );
 
      if (value == 1.0f) {
           lite_remove_timeout_callback( timeout_id );
-          lite_close_window( lite_find_my_window( LITE_BOX(progressbar) ) );
+          lite_close_window( window );
      }
      else {
           value += 0.01f;
           lite_set_progressbar_value( progressbar, value );
 
           lite_remove_timeout_callback( timeout_id );
-          lite_enqueue_timeout_callback( 50, timeout, progressbar, &timeout_id );
+          lite_enqueue_timeout_callback( TIMEOUT, timeout_cb, progressbar, &timeout_id );
      }
 
      return DFB_OK;
@@ -67,7 +70,7 @@ int main( int argc, char *argv[] )
      lite_new_progressbar( LITE_BOX(window), &rect, liteDefaultProgressBarTheme, &progressbar );
 
      /* install callback */
-     lite_enqueue_timeout_callback( 50, timeout, progressbar, &timeout_id );
+     lite_enqueue_timeout_callback( TIMEOUT, timeout_cb, progressbar, &timeout_id );
 
      /* show the window */
      lite_set_window_opacity( window, liteFullWindowOpacity );

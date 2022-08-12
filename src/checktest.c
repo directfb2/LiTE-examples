@@ -35,7 +35,9 @@ static void check1_press( LiteCheck *check1, LiteCheckState state, void *data )
 
 static void check2_press( LiteCheck *check2, LiteCheckState state, void *data )
 {
-     lite_close_window( data );
+     LiteWindow *window = data;
+
+     lite_close_window( window );
 }
 
 int main( int argc, char *argv[] )

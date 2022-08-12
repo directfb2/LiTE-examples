@@ -26,7 +26,9 @@
 
 static void textbutton1_press( LiteTextButton *textbutton1, void *data )
 {
-     lite_close_window( data );
+     LiteWindow *window = data;
+
+     lite_close_window( window );
 }
 
 static void textbutton2_press( LiteTextButton *textbutton2, void *data )

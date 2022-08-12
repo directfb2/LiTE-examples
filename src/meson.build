@@ -18,6 +18,7 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
+executable('lite_animation',   'animationtest.c',   dependencies: lite_dep, install: true)
 executable('lite_button',      'buttontest.c',      dependencies: lite_dep, install: true)
 executable('lite_check',       'checktest.c',       dependencies: lite_dep, install: true)
 executable('lite_label',       'labeltest.c',       dependencies: lite_dep, install: true)

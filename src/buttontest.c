@@ -48,7 +48,9 @@ static void button2_press( LiteButton *button2, void *data )
 
 static void button3_press( LiteButton *button3, void *data )
 {
-     lite_close_window( data );
+     LiteWindow *window = data;
+
+     lite_close_window( window );
 }
 
 int main( int argc, char *argv[] )
