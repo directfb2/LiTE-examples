@@ -1,3 +1,24 @@
+commit cb36b6c5020dd6f90a99de543ca57c3f9db77278
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Fri Aug 12 09:20:13 2022 +0200
+
+    Add animation test
+
+commit 2b6057fe455a359c3444409571b28b6de08888c7
+Merge: 52a330f a37d180
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Sat Aug 6 12:57:45 2022 +0200
+
+    Merge pull request #2 from caramelli/master
+    
+    Call to lite_destroy_window() is not required
+
+commit a37d180f5a7558027471873c7aeb95f72d1a7f9b
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Sat Aug 6 12:55:37 2022 +0200
+
+    Update ChangeLog
+
 commit 50a64d60bddfb9a0a48d09470cfc3259a6e7cbc6
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Sat Aug 6 12:55:28 2022 +0200
