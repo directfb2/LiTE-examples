@@ -21,6 +21,7 @@
 executable('lite_animation',   'animationtest.c',   dependencies: lite_dep, install: true)
 executable('lite_button',      'buttontest.c',      dependencies: lite_dep, install: true)
 executable('lite_check',       'checktest.c',       dependencies: lite_dep, install: true)
+executable('lite_image',       'imagetest.c',       dependencies: lite_dep, install: true)
 executable('lite_label',       'labeltest.c',       dependencies: lite_dep, install: true)
 executable('lite_list',        'listtest.c',        dependencies: lite_dep, install: true)
 executable('lite_progressbar', 'progressbartest.c', dependencies: lite_dep, install: true)
