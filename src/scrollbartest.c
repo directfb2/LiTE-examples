@@ -39,8 +39,8 @@ typedef struct {
 
 static int on_window_resize( LiteWindow *window, int width, int height )
 {
-     DFBRectangle   rect;
-     UserData      *user_data = LITE_BOX(window)->user_data;
+     DFBRectangle  rect;
+     UserData     *user_data = LITE_BOX(window)->user_data;
 
      rect.w = 240;                                     rect.x = (width - SCROLLBAR_THICKNESS - rect.w) / 2;
      rect.y = (80 + height - SCROLLBAR_THICKNESS) / 2; rect.h = 20;

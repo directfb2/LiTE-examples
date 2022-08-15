@@ -20,6 +20,7 @@
 
 examplesdata = [
   'D.dfiff',
+  'directfb.dfiff',
   'tuxsprites.dfiff'
 ]
 
