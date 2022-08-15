@@ -1,3 +1,24 @@
+commit 08f601bb197aab25cf44b0fbace2231ec156788c
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Aug 15 03:08:50 2022 +0200
+
+    Add image test
+
+commit 821c869606cc0daaa88e7ea5806404deea392f47
+Merge: 2b6057f b372b1f
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Fri Aug 12 09:21:44 2022 +0200
+
+    Merge pull request #3 from caramelli/master
+    
+    Add animation test
+
+commit b372b1fe92c9bb3cfbf7fcf2e858adf5a5c22925
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Fri Aug 12 09:20:57 2022 +0200
+
+    Update ChangeLog
+
 commit cb36b6c5020dd6f90a99de543ca57c3f9db77278
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Fri Aug 12 09:20:13 2022 +0200
