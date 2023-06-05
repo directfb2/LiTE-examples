@@ -1,3 +1,24 @@
+commit cee607f6970971ca4fe078cf6989ca1204c6a543
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Jun 5 12:15:10 2023 +0200
+
+    Follow API changes
+
+commit e2382051f2570edf22103dfcdbff83937759d4e5
+Merge: 821c869 637e565
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Mon Aug 15 03:11:33 2022 +0200
+
+    Merge pull request #4 from caramelli/master
+    
+    Add image test
+
+commit 637e5655ab8d6bfe174f04f4326f7babd432d8a5
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Aug 15 03:09:00 2022 +0200
+
+    Update ChangeLog
+
 commit 08f601bb197aab25cf44b0fbace2231ec156788c
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Mon Aug 15 03:08:50 2022 +0200

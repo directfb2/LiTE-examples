@@ -24,6 +24,10 @@
 #include <lite/lite.h>
 #include <lite/window.h>
 
+#ifdef USE_IMAGE_HEADERS
+#include "D.h"
+#endif
+
 static void button1_press( LiteButton *button1, void *data )
 {
      LiteButtonState  state;
@@ -43,7 +47,14 @@ static void button2_press( LiteButton *button2, void *data )
 
      lite_enable_button( button3, state == LITE_BS_HILITE_ON ? 1 : 0 );
 
-     lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.dfiff" : NULL );
+#ifdef USE_IMAGE_HEADERS
+     lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? D_data : NULL, sizeof(D_data) );
+#else
+     if (!getenv( "LITE_NO_DFIFF" ))
+          lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.dfiff" : NULL, 0 );
+     else
+          lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.png" : NULL, 0 );
+#endif
 }
 
 static void button3_press( LiteButton *button3, void *data )
