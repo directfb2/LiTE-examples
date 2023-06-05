@@ -18,10 +18,29 @@
 #  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 #  THE SOFTWARE.
 
-examplesdata = [
-  'D.dfiff',
-  'directfb.dfiff',
-  'tuxsprites.dfiff'
+examplesdata = []
+
+rawdata_names = [
+  'D',
+  'directfb-logo',
+  'tuxsprites'
 ]
+
+rawdata_hdrs = []
+
+if image_headers == 'disabled'
+  foreach name : rawdata_names
+    examplesdata += name + '.dfiff'
+    examplesdata += name + '.png'
+  endforeach
+else
+  foreach rawdata_name : rawdata_names
+    rawdata_hdrs += custom_target(rawdata_name,
+                                  input: rawdata_name + '.' + image_headers,
+                                  output: rawdata_name + '.h',
+                                  capture: true,
+                                  command: [directfb_csource, '--raw', '--name=@0@'.format(rawdata_name), '@INPUT@'])
+  endforeach
+endif
 
 install_data(examplesdata, install_dir: examplesdatadir)

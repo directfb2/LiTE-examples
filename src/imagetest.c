@@ -26,6 +26,10 @@
 #include <lite/slider.h>
 #include <lite/window.h>
 
+#ifdef USE_IMAGE_HEADERS
+#include "directfb-logo.h"
+#endif
+
 static int clip[4] = { 10, 130, 300, 60 };
 
 static void slider_update( LiteSlider *slider, float pos, void *data )
@@ -73,7 +77,14 @@ int main( int argc, char *argv[] )
      /* setup the image */
      rect.x = 0; rect.y = 0; rect.w = clip[2]; rect.h = clip[3];
      lite_new_image( LITE_BOX(window), &rect, liteNoImageTheme, &image );
-     lite_load_image( image, DATADIR"/directfb.dfiff" );
+#ifdef USE_IMAGE_HEADERS
+     lite_load_image( image, directfb_logo_data, sizeof(directfb_logo_data) );
+#else
+     if (!getenv( "LITE_NO_DFIFF" ))
+          lite_load_image( image, DATADIR"/directfb-logo.dfiff", 0 );
+     else
+          lite_load_image( image, DATADIR"/directfb-logo.png", 0 );
+#endif
      lite_get_image_size( image, &width, &height );
 
      /* set the image clipping area. */
