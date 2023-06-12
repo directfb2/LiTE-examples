@@ -1,3 +1,24 @@
+commit f45c32df7a37a6e03e9e8aa97ca6b87725571e27
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Jun 12 09:11:10 2023 +0200
+
+    Add NuttX build support
+
+commit 24675cf8f1df01dfddeeee66538edfb5af402c98
+Merge: e238205 a0c097e
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Mon Jun 5 12:20:16 2023 +0200
+
+    Merge pull request #5 from caramelli/master
+    
+    Follow API changes
+
+commit a0c097e53b146f1b28760129db32c7e4f10def02
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Jun 5 12:15:20 2023 +0200
+
+    Update ChangeLog
+
 commit cee607f6970971ca4fe078cf6989ca1204c6a543
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Mon Jun 5 12:15:10 2023 +0200

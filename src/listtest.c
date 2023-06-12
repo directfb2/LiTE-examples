@@ -26,6 +26,13 @@
 #include <lite/textbutton.h>
 #include <lite/window.h>
 
+/* macro to be used after the lite_main() function */
+#ifdef LITE_MAIN_ENTRYPOINT
+#define LITE_MAIN()
+#else
+#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
+#endif
+
 static int item_data_max = 0;
 
 static const char *fonts[] = {
@@ -189,7 +196,7 @@ void list_draw_item( LiteList *list, LiteListDrawItem *draw_item, void *data )
      }
 }
 
-int main( int argc, char *argv[] )
+int lite_main( int argc, char *argv[] )
 {
      DFBRectangle    rect;
      LiteWindow     *window;
@@ -260,3 +267,5 @@ int main( int argc, char *argv[] )
 
      return 0;
 }
+
+LITE_MAIN()

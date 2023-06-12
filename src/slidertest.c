@@ -25,6 +25,13 @@
 #include <lite/slider.h>
 #include <lite/window.h>
 
+/* macro to be used after the lite_main() function */
+#ifdef LITE_MAIN_ENTRYPOINT
+#define LITE_MAIN()
+#else
+#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
+#endif
+
 static u8 color[4] = { 0xf0, 0xc0, 0xc0, 0xc0 };
 
 static int on_window_resize( LiteWindow *window, int width, int height )
@@ -56,7 +63,7 @@ static void slider_update( LiteSlider *slider, float pos, void *data )
           lite_close_window( window );
 }
 
-int main( int argc, char *argv[] )
+int lite_main( int argc, char *argv[] )
 {
      DFBRectangle  rect;
      LiteWindow   *window;
@@ -109,3 +116,5 @@ int main( int argc, char *argv[] )
 
      return 0;
 }
+
+LITE_MAIN()
