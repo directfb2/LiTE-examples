@@ -24,6 +24,13 @@
 #include <lite/textbutton.h>
 #include <lite/window.h>
 
+/* macro to be used after the lite_main() function */
+#ifdef LITE_MAIN_ENTRYPOINT
+#define LITE_MAIN()
+#else
+#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
+#endif
+
 static void textbutton1_press( LiteTextButton *textbutton1, void *data )
 {
      LiteWindow *window = data;
@@ -44,7 +51,7 @@ static void textbutton2_press( LiteTextButton *textbutton2, void *data )
                                    state == LITE_TBS_DISABLED ? "Disable Exit TextButton" : "Enable Exit TextButton" );
 }
 
-int main( int argc, char *argv[] )
+int lite_main( int argc, char *argv[] )
 {
      DFBRectangle    rect;
      LiteWindow     *window;
@@ -86,3 +93,5 @@ int main( int argc, char *argv[] )
 
      return 0;
 }
+
+LITE_MAIN()

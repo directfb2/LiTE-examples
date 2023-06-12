@@ -25,6 +25,13 @@
 #include <lite/scrollbar.h>
 #include <lite/window.h>
 
+/* macro to be used after the lite_main() function */
+#ifdef LITE_MAIN_ENTRYPOINT
+#define LITE_MAIN()
+#else
+#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
+#endif
+
 #define SCROLLBAR_THICKNESS 16
 
 typedef struct {
@@ -84,7 +91,7 @@ static void scrollbar_update( LiteScrollbar *scrollbar, LiteScrollInfo *info, vo
      lite_set_label_text( label, text );
 }
 
-int main( int argc, char *argv[] )
+int lite_main( int argc, char *argv[] )
 {
      DFBRectangle    rect;
      LiteWindow     *window;
@@ -205,3 +212,5 @@ int main( int argc, char *argv[] )
 
      return 0;
 }
+
+LITE_MAIN()
