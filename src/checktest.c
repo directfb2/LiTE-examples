@@ -24,13 +24,6 @@
 #include <lite/lite.h>
 #include <lite/window.h>
 
-/* macro to be used after the lite_main() function */
-#ifdef LITE_MAIN_ENTRYPOINT
-#define LITE_MAIN()
-#else
-#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
-#endif
-
 static void check1_press( LiteCheck *check1, LiteCheckState state, void *data )
 {
      LiteCheck *check2 = data;
@@ -47,7 +40,7 @@ static void check2_press( LiteCheck *check2, LiteCheckState state, void *data )
      lite_close_window( window );
 }
 
-int lite_main( int argc, char *argv[] )
+int main( int argc, char *argv[] )
 {
      DFBRectangle  rect;
      LiteWindow   *window;
@@ -85,5 +78,3 @@ int lite_main( int argc, char *argv[] )
 
      return 0;
 }
-
-LITE_MAIN()

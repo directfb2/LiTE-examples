@@ -29,13 +29,6 @@
 #include "tuxsprites.h"
 #endif
 
-/* macro to be used after the lite_main() function */
-#ifdef LITE_MAIN_ENTRYPOINT
-#define LITE_MAIN()
-#else
-#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
-#endif
-
 #define TIMEOUT 200
 
 static int timeout_id;
@@ -74,7 +67,7 @@ static void button_exit_press( LiteTextButton *buttonExit, void *data )
      lite_close_window( window );
 }
 
-int lite_main( int argc, char *argv[] )
+int main( int argc, char *argv[] )
 {
      DFBRectangle    rect;
      LiteWindow     *window;
@@ -126,5 +119,3 @@ int lite_main( int argc, char *argv[] )
 
      return 0;
 }
-
-LITE_MAIN()
