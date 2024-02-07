@@ -1,3 +1,24 @@
+commit 737f155f9cb49ba5049984efddb0765e13cee5c2
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Wed Feb 7 19:31:50 2024 +0100
+
+    NuttX: Use PROGNAME
+
+commit 7b32c1fc3166f782514dd983214b43801a105962
+Merge: 9f88d75 a3bf3a7
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Wed Feb 7 18:15:36 2024 +0100
+
+    Merge pull request #7 from caramelli/master
+    
+    Use specific functions when loading resources from memory
+
+commit a3bf3a78687c06b2fe95809b5f767efb69c0b925
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Wed Feb 7 18:08:27 2024 +0100
+
+    Update ChangeLog
+
 commit 8a46260e799cca125b768b5dc09eb0fa74aaf603
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Wed Feb 7 18:08:17 2024 +0100
