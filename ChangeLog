@@ -1,3 +1,24 @@
+commit 8a46260e799cca125b768b5dc09eb0fa74aaf603
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Wed Feb 7 18:08:17 2024 +0100
+
+    Use specific functions when loading resources from memory
+
+commit 9f88d75da2a965b5f1e002485a7695787624345f
+Merge: 24675cf d026ef6
+Author: DirectFB2 <80045286+directfb2@users.noreply.github.com>
+Date:   Mon Jun 12 09:18:47 2023 +0200
+
+    Merge pull request #6 from caramelli/master
+    
+    Add NuttX build support
+
+commit d026ef67bdd6df03faad9de68567e278be3356bd
+Author: Nicolas Caramelli <caramelli.devel@gmail.com>
+Date:   Mon Jun 12 09:11:23 2023 +0200
+
+    Update ChangeLog
+
 commit f45c32df7a37a6e03e9e8aa97ca6b87725571e27
 Author: Nicolas Caramelli <caramelli.devel@gmail.com>
 Date:   Mon Jun 12 09:11:10 2023 +0200

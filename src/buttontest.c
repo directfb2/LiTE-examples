@@ -55,12 +55,12 @@ static void button2_press( LiteButton *button2, void *data )
      lite_enable_button( button3, state == LITE_BS_HILITE_ON ? 1 : 0 );
 
 #ifdef USE_IMAGE_HEADERS
-     lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? D_data : NULL, sizeof(D_data) );
+     lite_set_button_image_data( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? D_data : NULL, sizeof(D_data) );
 #else
      if (!getenv( "LITE_NO_DFIFF" ))
-          lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.dfiff" : NULL, 0 );
+          lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.dfiff" : NULL );
      else
-          lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.png" : NULL, 0 );
+          lite_set_button_image( button3, LITE_BS_NORMAL, state == LITE_BS_HILITE_ON ? DATADIR"/D.png" : NULL );
 #endif
 }
 
