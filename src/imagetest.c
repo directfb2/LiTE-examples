@@ -85,12 +85,12 @@ int lite_main( int argc, char *argv[] )
      rect.x = 0; rect.y = 0; rect.w = clip[2]; rect.h = clip[3];
      lite_new_image( LITE_BOX(window), &rect, liteNoImageTheme, &image );
 #ifdef USE_IMAGE_HEADERS
-     lite_load_image( image, directfb_logo_data, sizeof(directfb_logo_data) );
+     lite_load_image_data( image, directfb_logo_data, sizeof(directfb_logo_data) );
 #else
      if (!getenv( "LITE_NO_DFIFF" ))
-          lite_load_image( image, DATADIR"/directfb-logo.dfiff", 0 );
+          lite_load_image( image, DATADIR"/directfb-logo.dfiff" );
      else
-          lite_load_image( image, DATADIR"/directfb-logo.png", 0 );
+          lite_load_image( image, DATADIR"/directfb-logo.png" );
 #endif
      lite_get_image_size( image, &width, &height );
 

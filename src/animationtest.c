@@ -93,12 +93,12 @@ int lite_main( int argc, char *argv[] )
      rect.x = 10; rect.y = 10; rect.w = 40; rect.h = 60;
      lite_new_animation( LITE_BOX(window), &rect, liteNoAnimationTheme, &animation );
 #ifdef USE_IMAGE_HEADERS
-     lite_load_animation( animation, tuxsprites_data, sizeof(tuxsprites_data), 0, 40, 60 );
+     lite_load_animation_data( animation, tuxsprites_data, sizeof(tuxsprites_data), 0, 40, 60 );
 #else
      if (!getenv( "LITE_NO_DFIFF" ))
-          lite_load_animation( animation, DATADIR"/tuxsprites.dfiff", 0, 0, 40, 60 );
+          lite_load_animation( animation, DATADIR"/tuxsprites.dfiff", 0, 40, 60 );
      else
-          lite_load_animation( animation, DATADIR"/tuxsprites.png", 0, 0, 40, 60 );
+          lite_load_animation( animation, DATADIR"/tuxsprites.png", 0, 40, 60 );
 #endif
      lite_start_animation( animation, TIMEOUT );
 
