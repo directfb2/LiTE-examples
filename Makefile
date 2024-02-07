@@ -20,46 +20,99 @@
 
 include $(APPDIR)/Make.defs
 
-PROGNAME  = $(CONFIG_EXAMPLES_LITE_PROGNAME)
-PRIORITY  = $(CONFIG_EXAMPLES_LITE_PRIORITY)
-STACKSIZE = $(CONFIG_EXAMPLES_LITE_STACKSIZE)
+PRIORITY  = SCHED_PRIORITY_DEFAULT
+STACKSIZE = 16384
 MODULE    = $(CONFIG_EXAMPLES_LITE)
 
 CFLAGS += -Idata
-CFLAGS += -DLITE_MAIN_ENTRYPOINT
 CFLAGS += -DUSE_IMAGE_HEADERS
 
 ifeq ($(CONFIG_LITE_ANIMATION),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_animation
+else
+PROGNAME = lite
+endif
 MAINSRC = src/animationtest.c
 endif
 ifeq ($(CONFIG_LITE_BUTTON),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_button
+else
+PROGNAME = lite
+endif
 MAINSRC = src/buttontest.c
 endif
 ifeq ($(CONFIG_LITE_CHECK),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_check
+else
+PROGNAME = lite
+endif
 MAINSRC = src/checktest.c
 endif
 ifeq ($(CONFIG_LITE_IMAGE),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_image
+else
+PROGNAME = lite
+endif
 MAINSRC = src/imagetest.c
 endif
 ifeq ($(CONFIG_LITE_LABEL),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_label
+else
+PROGNAME = lite
+endif
 MAINSRC = src/labeltest.c
 endif
 ifeq ($(CONFIG_LITE_LIST),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_list
+else
+PROGNAME = lite
+endif
 MAINSRC = src/listtest.c
 endif
 ifeq ($(CONFIG_LITE_PROGRESSBAR),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_progressbar
+else
+PROGNAME = lite
+endif
 MAINSRC = src/progressbartest.c
 endif
 ifeq ($(CONFIG_LITE_SCROLLBAR),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_scrollbar
+else
+PROGNAME = lite
+endif
 MAINSRC = src/scrollbartest.c
 endif
 ifeq ($(CONFIG_LITE_SLIDER),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_slider
+else
+PROGNAME = lite
+endif
 MAINSRC = src/slidertest.c
 endif
 ifeq ($(CONFIG_LITE_TEXTBUTTON),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_textbutton
+else
+PROGNAME = lite
+endif
 MAINSRC = src/textbuttontest.c
 endif
 ifeq ($(CONFIG_LITE_TEXTLINE),y)
+ifeq ($(CONFIG_NSH_BUILTIN_APPS),y)
+PROGNAME = lite_textline
+else
+PROGNAME = lite
+endif
 MAINSRC = src/textlinetest.c
 endif
 

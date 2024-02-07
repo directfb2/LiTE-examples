@@ -2,3 +2,4 @@
 -----
 - Separate package for LiTE examples
 - Meson build system
+- NuttX support

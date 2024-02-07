@@ -30,13 +30,6 @@
 #include "directfb-logo.h"
 #endif
 
-/* macro to be used after the lite_main() function */
-#ifdef LITE_MAIN_ENTRYPOINT
-#define LITE_MAIN()
-#else
-#define LITE_MAIN() int main( int argc, char *argv[] ) { return lite_main( argc, argv ); }
-#endif
-
 static int clip[4] = { 10, 130, 300, 60 };
 
 static void slider_update( LiteSlider *slider, float pos, void *data )
@@ -61,7 +54,7 @@ static void slider_update( LiteSlider *slider, float pos, void *data )
           lite_close_window( window );
 }
 
-int lite_main( int argc, char *argv[] )
+int main( int argc, char *argv[] )
 {
      DFBRectangle  rect;
      LiteWindow   *window;
@@ -134,5 +127,3 @@ int lite_main( int argc, char *argv[] )
 
      return 0;
 }
-
-LITE_MAIN()
